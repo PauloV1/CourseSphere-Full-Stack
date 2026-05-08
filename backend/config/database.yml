@@ -1,0 +1,21 @@
+default: &default
+  adapter: postgresql
+  encoding: unicode
+  host: db
+  username: postgres
+  password: password
+  pool: <%= ENV.fetch("RAILS_MAX_THREADS") { 5 } %>
+
+development:
+  <<: *default
+  database: coursesphere_development
+
+test:
+  <<: *default
+  database: coursesphere_test
+
+production:
+  <<: *default
+  database: coursesphere_production
+  username: coursesphere
+  password: <%= ENV["COURSESPHERE_DATABASE_PASSWORD"] %>
