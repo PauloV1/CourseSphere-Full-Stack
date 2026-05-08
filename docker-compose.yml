@@ -1,0 +1,30 @@
+services:
+  db:
+    image: postgres:18
+    container_name: coursesphere-db
+    environment:
+      POSTGRES_PASSWORD: password
+    volumes:
+      - pg_data:/var/lib/postgresql
+
+  backend:
+    build: ./backend
+    container_name: coursesphere-api
+    ports:
+      - "3000:3000"
+    environment:
+      DATABASE_URL: postgres://postgres:password@db:5432/coursesphere_development
+    depends_on:
+      - db
+
+  frontend:
+    build: ./frontend
+    container_name: coursesphere-ui
+    ports:
+      - "5173:5173"
+    volumes:
+      - ./frontend:/app
+      - /app/node_modules
+
+volumes:
+  pg_data:
