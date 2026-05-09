@@ -10,6 +10,8 @@ services:
   backend:
     build: ./backend
     container_name: coursesphere-api
+    volumes:
+      - ./backend:/app
     ports:
       - "3000:3000"
     environment:
