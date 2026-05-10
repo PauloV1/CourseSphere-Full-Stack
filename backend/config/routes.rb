@@ -5,4 +5,9 @@ Rails.application.routes.draw do
   delete '/logout', to: 'authentication#logout'
   #get "up" => "rails/health#show", as: :rails_health_check
   get '/me', to: 'users#me'
+
+  resources :courses do
+    resources :lessons, only: [:index, :create]
+  end
+  resources :lessons, only: [:show, :update, :destroy]
 end
