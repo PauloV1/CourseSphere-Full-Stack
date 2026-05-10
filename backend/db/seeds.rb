@@ -10,12 +10,6 @@ User.destroy_all
 
 # 2. Criação de Usuários
 puts "Criando usuários de teste..."
-admin = User.create!(
-  name: "Administrador do Sistema",
-  email: "admin@coursesphere.com",
-  password: "password123"
-)
-
 instrutor_tech = User.create!(
   name: "Instrutor Tech",
   email: "tech@coursesphere.com",
@@ -35,7 +29,7 @@ curso_node = Course.create!(
   description: "Aprenda a construir arquiteturas escaláveis com Node.js, Express e Docker. Um guia completo para o desenvolvimento backend moderno.",
   start_date: Date.today - 10.days,
   end_date: Date.today + 50.days,
-  creator: admin
+  creator: instrutor_tech
 )
 
 curso_ui = Course.create!(
@@ -59,7 +53,7 @@ curso_marketing = Course.create!(
   description: "Aprenda a criar campanhas de conversão que geram resultados consistentes utilizando tráfego pago e orgânico.",
   start_date: Date.today + 15.days,
   end_date: Date.today + 45.days,
-  creator: admin
+  creator: instrutor_design
 )
 
 # 4. Criação de Aulas (Lessons)
@@ -96,6 +90,5 @@ curso_marketing.lessons.create!([
 
 puts "--- Seed Finalizado com Sucesso! ---"
 puts "Usuário(s) de teste criados:"
-puts "1. admin@coursesphere.com / password123"
-puts "2. tech@coursesphere.com / password123"
-puts "3. design@coursesphere.com / password123"
+puts "1. tech@coursesphere.com / password123"
+puts "2. design@coursesphere.com / password123"
