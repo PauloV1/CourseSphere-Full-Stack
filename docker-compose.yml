@@ -3,21 +3,32 @@ services:
     image: postgres:18
     container_name: coursesphere-db
     environment:
+      POSTGRES_USER: postgres
       POSTGRES_PASSWORD: password
+      POSTGRES_DB: coursesphere_development
     volumes:
       - pg_data:/var/lib/postgresql
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U postgres"]
+      interval: 5s
+      timeout: 5s
+      retries: 5
 
   backend:
     build: ./backend
     container_name: coursesphere-api
     volumes:
       - ./backend:/app
+      - bundle_data:/usr/local/bundle
     ports:
       - "3000:3000"
     environment:
       DATABASE_URL: postgres://postgres:password@db:5432/coursesphere_development
+      RAILS_ENV: development
+      SECRET_KEY_BASE: changeme_in_production_use_a_long_random_string
     depends_on:
-      - db
+      db:
+        condition: service_healthy
 
   frontend:
     build: ./frontend
@@ -27,6 +38,11 @@ services:
     volumes:
       - ./frontend:/app
       - /app/node_modules
+    environment:
+      VITE_API_URL: http://localhost:3000
+    depends_on:
+      - backend
 
 volumes:
   pg_data:
+  bundle_data:
