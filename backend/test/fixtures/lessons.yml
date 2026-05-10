@@ -1,0 +1,10 @@
+published_lesson:
+  title: Introducao ao Rails
+  status: published
+  video_url: https://www.youtube.com/watch?v=abc123
+  course: rails_course
+
+draft_lesson:
+  title: Conceitos Avancados
+  status: draft
+  course: react_course

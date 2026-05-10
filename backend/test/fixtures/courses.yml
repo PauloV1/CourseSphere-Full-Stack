@@ -1,0 +1,13 @@
+rails_course:
+  name: Ruby on Rails Avancado
+  description: API REST com autenticacao JWT
+  start_date: 2026-06-01
+  end_date: 2026-08-01
+  creator: alice
+
+react_course:
+  name: React com Hooks
+  description: Interfaces modernas com React 19
+  start_date: 2026-07-01
+  end_date: 2026-09-01
+  creator: bob

@@ -1,9 +1,12 @@
-# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+# Fixtures para User
+# A senha em texto puro é "password123" para os dois usuários.
+# Usamos ERB para gerar o digest com BCrypt, exatamente como has_secure_password espera.
+alice:
+  name: Alice
+  email: alice@example.com
+  password_digest: <%= BCrypt::Password.create('password123') %>
 
-one:
-  email: MyString
-  password_digest: MyString
-
-two:
-  email: MyString
-  password_digest: MyString
+bob:
+  name: Bob
+  email: bob@example.com
+  password_digest: <%= BCrypt::Password.create('password123') %>
