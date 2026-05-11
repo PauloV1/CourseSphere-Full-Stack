@@ -61,23 +61,23 @@ puts "Criando aulas..."
 
 # Aulas Curso Node
 curso_node.lessons.create!([
-  { title: "Introdução à Arquitetura Backend", status: "published", video_url: "https://www.youtube.com/watch?v=ENrzD9HAZK4" },
-  { title: "Configurando o Ambiente Local", status: "published", video_url: "https://www.youtube.com/watch?v=pKd0Rpw7O48" },
-  { title: "Criando a primeira API Rest", status: "published", video_url: "https://www.youtube.com/watch?v=pU9Q6oiQNd0" },
+  { title: "Introdução à Arquitetura Backend", status: "published", video_url: "https://www.youtube.com" },
+  { title: "Configurando o Ambiente Local", status: "published", video_url: "https://www.youtube.com" },
+  { title: "Criando a primeira API Rest", status: "published", video_url: "https://www.youtube.com" },
   { title: "Tratamento de Erros Avançado", status: "draft" }
 ])
 
 # Aulas Curso UI/UX
 curso_ui.lessons.create!([
-  { title: "Os 10 Princípios da Heurística de Nielsen", status: "published", video_url: "https://www.youtube.com/watch?v=FjI1k4B7aIQ" },
-  { title: "Tipografia e Cores: O Guia Definitivo", status: "published", video_url: "https://www.youtube.com/watch?v=9gTw2EDkaDQ" },
+  { title: "Os 10 Princípios da Heurística de Nielsen", status: "published", video_url: "https://www.youtube.com" },
+  { title: "Tipografia e Cores: O Guia Definitivo", status: "published", video_url: "https://www.youtube.com" },
   { title: "Desenhando seu primeiro Wireframe no Figma", status: "draft" }
 ])
 
 # Aulas Curso Python
 curso_python.lessons.create!([
-  { title: "Configurando o Jupyter Notebook", status: "published", video_url: "https://www.youtube.com/watch?v=HW29067qVWk" },
-  { title: "Lendo Dados de CSV com Pandas", status: "published", video_url: "https://www.youtube.com/watch?v=vmEHCJofslg" },
+  { title: "Configurando o Jupyter Notebook", status: "published", video_url: "https://www.youtube.com" },
+  { title: "Lendo Dados de CSV com Pandas", status: "published", video_url: "https://www.youtube.com" },
   { title: "Limpando e Tratando Valores Nulos", status: "published" },
   { title: "Criando Gráficos com Matplotlib", status: "draft" }
 ])
