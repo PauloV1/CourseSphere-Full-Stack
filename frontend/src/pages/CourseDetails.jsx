@@ -130,7 +130,7 @@ export function CourseDetails() {
             Voltar
           </Link>
         </div>
-        <button onClick={handleLogout} className="logout-btn" style={{ height: '40px', padding: '0 1rem' }}>
+        <button onClick={handleLogout} className="logout-btn">
           Sair
         </button>
       </nav>
